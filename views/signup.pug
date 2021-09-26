@@ -1,0 +1,20 @@
+doctype html
+html
+    include ./head.pug
+
+    body.container
+        include ./NavBar.pug
+
+        main.d-flex.justify-content-between.align-items-center.flex-column.w-100
+            header.d-flex.justify-content-center.w-100.d-flex.justify-content-center.align-items-center.flex-column
+                form.g-3.w-25.mt-5(action='/users/signup' method='POST')
+                    h2.my-3 Register 
+                    if error
+                        p.text-danger #{error}
+                    input#name.form-control.mt-2(type='text' name='fullname' placeholder='Full Name')
+                    input#email.form-control.mt-2(type='email' name='email' placeholder='Email')
+                    input#password.form-control.mt-2(type='password' name='password' placeholder='Password')
+                    button.btn.btn-primary.mt-3(type='submit') Sign Up
+
+            
+            include ./Footer.pug
